@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * json文件配置全局参数测试
- * @tag 哇哇哇哇哇
- * @author chen qi 2021-07-16 14:09
+ * json file config test
+ * @tag dev
+ * @author cqmike 2021-07-16 14:09
  **/
 @RestController
 public class ConfigRequestParamController {
 
     /**
-     * get请求测试query参数
-     * @tag 顶顶顶到达
+     * get request test query param
+     * @tag test
      * @author cqmike
      * @return
      */
@@ -25,9 +25,9 @@ public class ConfigRequestParamController {
     }
 
     /**
-     * post请求测试query参数
+     * post request test query param
      *
-     * @tag 顶顶顶到达
+     * @tag test
      * @author cqmike
      * @return
      */
