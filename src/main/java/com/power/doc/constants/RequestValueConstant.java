@@ -12,4 +12,12 @@ public interface RequestValueConstant {
     String ID_DEFAULT_NONE = "-1";
     // 时间类型的默认值
     String DATE_DEFAULT_NONE = "0";
+
+    String ALL = "all";
+
+    String ALL_NEARBY = "all-nearby";
+
+    String URL_LOGIN = "/login";
+
+    String URL_PARAMS = URL_LOGIN +"/getParams/{type}";
 }

@@ -12,6 +12,8 @@ import com.power.doc.model.mybatisplus.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+
+
 /**
  * app端接口测试
  * @author yu 2018/9/4.
@@ -20,6 +22,18 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("app")
 public class AppController {
+
+
+
+    /**
+     * Test Constants
+     *
+     * @param page 页码
+     */
+    @GetMapping(ApiVersion.ADMIN_ROOT+"/testConstants/" + ApiVersion.VERSION)
+    public void testConstantsRequestParams(@RequestParam(required = false, defaultValue = RequestValueConstant.PAGE_DEFAULT_NONE, value = RequestParamConstant.PAGE) int page) {
+
+    }
 
     /**
      * 创建人员
@@ -34,15 +48,6 @@ public class AppController {
         return CommonResult.ok();
     }
 
-    /**
-     * Test Constants
-     *
-     * @param page 页码
-     */
-    @GetMapping(ApiVersion.ADMIN_ROOT+"/testConstants/" + ApiVersion.VERSION)
-    public void testConstantsRequestParams(@RequestParam(required = false, defaultValue = RequestValueConstant.PAGE_DEFAULT_NONE, value = RequestParamConstant.PAGE) int page) {
-
-    }
     /**
      * 分页查询订单信息
      * @param pageIndex 当前页码
@@ -90,4 +95,33 @@ public class AppController {
     public String test3(String name,String beginTime, String endTime){
         return "hello app";
     }
+
+    /**
+     * 常量测试
+     * @return
+     */
+    @GetMapping("test4/"+RequestValueConstant.ALL)
+    public String testConstants1(){
+        return null;
+    }
+
+    /**
+     * 常量测试2
+     * @return
+     */
+    @GetMapping("test4/"+RequestValueConstant.ALL_NEARBY)
+    public String testConstants2(){
+        return null;
+    }
+
+
+    /**
+     * 常量测试3
+     * @return
+     */
+    @GetMapping(value=RequestValueConstant.URL_PARAMS)
+    public String testConstants3() {
+        return null;
+    }
+
 }
